@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah & Evolusi Kotak P3K Maritim</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f9fc;
+            color: #17324d;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 45, 73, 0.96);
+            backdrop-filter: blur(10px);
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .logo span {
+            color: #55d6ff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #55d6ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+            background:
+                linear-gradient(rgba(0, 38, 63, 0.78), rgba(0, 83, 120, 0.78)),
+                radial-gradient(circle at top, #168aad, #023047 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            bottom: -400px;
+            right: -150px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #5ee7ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: auto;
+            color: #e2f7ff;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #00b4d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #0096c7;
+            box-shadow: 0 8px 20px rgba(0,180,216,0.3);
+        }
+
+        /* GENERAL */
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #023047;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #607d8b;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* PENGERTIAN */
+        .definition {
+            background: white;
+        }
+
+        .definition-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .definition-text {
+            padding: 20px;
+        }
+
+        .definition-text h3 {
+            color: #0077b6;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .definition-visual {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            min-height: 300px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 120px;
+            box-shadow: 0 15px 35px rgba(0,119,182,0.2);
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+            border-top: 4px solid #00b4d8;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #023047;
+            margin-bottom: 10px;
+        }
+
+        /* TIMELINE */
+        .history {
+            background: #eaf7fc;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #00b4d8;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+        }
+
+        .timeline-content h3 {
+            color: #0077b6;
+            margin-bottom: 8px;
+        }
+
+        .year {
+            display: inline-block;
+            background: #023047;
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* INVENTORY */
+        .inventory {
+            background: white;
+        }
+
+        .tool-card {
+            background: #f7fcff;
+            padding: 25px;
+            border-radius: 18px;
+            border-left: 5px solid #00b4d8;
+            transition: 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateX(5px);
+        }
+
+        .tool-card h3 {
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        /* BOX DIAGRAM */
+        .diagram {
+            margin-top: 45px;
+            background: #023047;
+            color: white;
+            padding: 35px;
+            border-radius: 25px;
+        }
+
+        .diagram-title {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+            color: #5ee7ff;
+        }
+
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .diagram-column {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .diagram-column h3 {
+            color: #5ee7ff;
+            margin-bottom: 15px;
+        }
+
+        .diagram-column ul {
+            padding-left: 20px;
+        }
+
+        /* REGULASI */
+        .regulation {
+            background: #f4f9fc;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #023047, #0077b6);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+        }
+
+        .highlight h3 {
+            color: #5ee7ff;
+            margin-bottom: 12px;
+        }
+
+        /* QUIZ */
+        .quiz {
+            background: linear-gradient(135deg, #023047, #0077b6);
+            color: white;
+        }
+
+        .quiz .section-title h2,
+        .quiz .section-title p {
+            color: white;
+        }
+
+        .quiz-box {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            color: #17324d;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .progress {
+            height: 10px;
+            background: #e4eef2;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #00b4d8;
+            transition: 0.4s;
+        }
+
+        .question-number {
+            color: #0077b6;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .answers {
+            display: grid;
+            gap: 12px;
+        }
+
+        .answer {
+            border: 2px solid #dbeaf0;
+            background: #f8fcfe;
+            padding: 15px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .answer:hover {
+            border-color: #00b4d8;
+            background: #eefaff;
+        }
+
+        .answer.correct {
+            background: #d9f8e5;
+            border-color: #2a9d5b;
+        }
+
+        .answer.wrong {
+            background: #ffe0e0;
+            border-color: #d9534f;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            font-weight: bold;
+        }
+
+        .quiz-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        #nextBtn {
+            display: none;
+        }
+
+        .result {
+            text-align: center;
+            display: none;
+        }
+
+        .result-score {
+            font-size: 70px;
+            font-weight: bold;
+            color: #0077b6;
+            margin: 20px 0;
+        }
+
+        .result-message {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #011d2e;
+            color: #bcd4df;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer strong {
+            color: #5ee7ff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .definition-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .diagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 45px;
+                padding-right: 0;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">⚓ P3K<span>MARITIM</span></div>
+
+        <ul>
+            <li><a href="#pengertian">Pengertian</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#alat">Alat P3K</a></li>
+            <li><a href="#regulasi">Regulasi</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="hero-icon">🩹⚓</div>
+
+            <h1>
+                Sejarah & Evolusi
+                <span>Kotak P3K</span>
+                Maritim
+            </h1>
+
+            <p>
+                Pelajari perjalanan pertolongan pertama dari medan perang
+                hingga menjadi sistem medis darurat modern di tengah laut.
+            </p>
+
+            <a href="#pengertian" class="btn">
+                Mulai Belajar ↓
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- PENGERTIAN -->
+    <section id="pengertian" class="definition">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2> Pengertian q(≧▽≦q)</h2>
+                <p>Mengenal dasar-dasar kotak P3K dan pertolongan pertama</p>
+            </div>
+
+            <div class="definition-box">
+
+                <div class="definition-text">
+
+                    <h3>Apa itu P3K?</h3>
+
+                    <p>
+                        <strong>P3K (Pertolongan Pertama Pada Kecelakaan)</strong>
+                        adalah tindakan pertolongan awal yang diberikan kepada
+                        seseorang yang mengalami cedera, kecelakaan, atau kondisi
+                        darurat sebelum mendapatkan bantuan medis profesional.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Kotak P3K merupakan wadah yang berisi berbagai alat dan
+                        perlengkapan medis dasar untuk membantu menangani kondisi
+                        darurat.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Dalam lingkungan maritim, kotak P3K memiliki kebutuhan
+                        khusus karena harus mampu digunakan dalam kondisi
+                        <strong>basah, berguncang, jauh dari fasilitas kesehatan,
+                        dan menghadapi risiko tenggelam maupun hipotermia.</strong>
+                    </p>
+
+                </div>
+
+                <div class="definition-visual">
+                    🧰
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TUJUAN -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2> Mengapa P3K Penting?(╹ڡ╹ )</h2>
+                <p>Beberapa fungsi utama pertolongan pertama</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">🚑</div>
+                    <h3>Menyelamatkan Nyawa</h3>
+                    <p>
+                        Pertolongan pertama dapat membantu mempertahankan kondisi
+                        korban sampai bantuan medis profesional tiba.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🩸</div>
+                    <h3>Mengendalikan Cedera</h3>
+                    <p>
+                        Perban, kasa, dan alat lainnya dapat digunakan untuk
+                        membantu mengendalikan perdarahan dan melindungi luka.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌊</div>
+                    <h3>Khusus Lingkungan Laut</h3>
+                    <p>
+                        Perlengkapan P3K maritim dirancang untuk menghadapi
+                        kondisi seperti air laut, hipotermia, dan kecelakaan kapal.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEJARAH -->
+    <section id="sejarah" class="history">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Sejarah & Evolusi P3K （*゜ー゜*)</h2>
+                <p>Perjalanan panjang pertolongan pertama dari zaman kuno hingga modern</p>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">Zaman Kuno</span>
+
+                        <h3>Bangsa Romawi</h3>
+
+                        <p>
+                            Pasukan Romawi diketahui menggunakan pembalut luka
+                            dan alat sederhana seperti tourniquet untuk menangani
+                            korban di medan perang.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">Awal Abad ke-19</span>
+
+                        <h3>Dominique Jean Larrey</h3>
+
+                        <p>
+                            Ahli bedah tentara Napoleon Bonaparte mengembangkan
+                            sistem <em>ambulances volantes</em>, yaitu sistem
+                            evakuasi cepat bagi korban dari medan perang.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">1859</span>
+
+                        <h3>Tragedi Solferino</h3>
+
+                        <p>
+                            Henry Dunant menyaksikan ribuan korban Pertempuran
+                            Solferino yang tidak mendapatkan bantuan medis.
+                            Pengalaman ini menjadi salah satu pemicu gerakan
+                            kemanusiaan internasional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">1863</span>
+
+                        <h3>Lahirnya Palang Merah</h3>
+
+                        <p>
+                            Gerakan yang terinspirasi dari pengalaman Dunant
+                            berkembang menjadi Komite Internasional Palang Merah
+                            dan mendorong pelatihan pertolongan pertama.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">1870-an</span>
+
+                        <h3>Friedrich von Esmarch</h3>
+
+                        <p>
+                            Dr. Friedrich von Esmarch mengembangkan pendidikan
+                            pertolongan pertama dan memperkenalkan perban
+                            segitiga dengan ilustrasi instruksi penggunaan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-content">
+
+                        <span class="year">1888</span>
+
+                        <h3>Johnson's Railway First Aid Kit</h3>
+
+                        <p>
+                            Robert Wood Johnson bersama Fred Kilmer mengembangkan
+                            kit P3K untuk kebutuhan pekerja konstruksi rel yang
+                            jauh dari fasilitas medis.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KOTAK P3K -->
+    <section id="alat" class="inventory">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>!! Anatomi Kotak P3K Maritim !!</h2>
+                <p>Mengenal alat dan perlengkapan yang terdapat di dalamnya</p>
+            </div>
+
+
+            <div class="diagram">
+
+                <div class="diagram-title">
+                    ⚓ KOTAK P3K MARITIM — WATERPROOF BOX
+                </div>
+
+                <div class="diagram-grid">
+
+                    <div class="diagram-column">
+                        <h3>🔧 Instrumen Utama</h3>
+
+                        <ul>
+                            <li>Trauma Shears</li>
+                            <li>Pinset Anatomis</li>
+                            <li>CPR Pocket Mask</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-column">
+                        <h3>🩹 Bahan Habis Pakai</h3>
+
+                        <ul>
+                            <li>Kasa Steril</li>
+                            <li>Plester Elastis</li>
+                            <li>Povidone Iodine</li>
+                        </ul>
+                    </div>
+
+                    <div class="diagram-column">
+                        <h3>🌊 Kondisi Laut</h3>
+
+                        <ul>
+                            <li>Dimenhydrinate</li>
+                            <li>Thermal Blanket</li>
+                            <li>NaCl 0,9%</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <br><br>
+
+
+            <div class="cards">
+
+                <div class="tool-card">
+
+                    <h3>✂️ Trauma Shears</h3>
+
+                    <p>
+                        Gunting medis dengan ujung tumpul yang dirancang untuk
+                        membantu memotong pakaian, tali kecil, atau sabuk tanpa
+                        mudah melukai kulit korban.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-card">
+
+                    <h3>🔬 Pinset Anatomis</h3>
+
+                    <p>
+                        Digunakan untuk membantu mengambil benda asing kecil
+                        seperti serpihan, pasir, atau duri dari area luka.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-card">
+
+                    <h3>😷 CPR Pocket Mask</h3>
+
+                    <p>
+                        Pelindung wajah dengan katup satu arah yang digunakan
+                        sebagai penghalang saat memberikan bantuan pernapasan.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-card">
+
+                    <h3>🛌 Thermal Blanket</h3>
+
+                    <p>
+                        Selimut reflektif tipis yang membantu mengurangi kehilangan
+                        panas tubuh pada korban yang mengalami kedinginan.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-card">
+
+                    <h3>💧 NaCl 0,9%</h3>
+
+                    <p>
+                        Cairan saline steril yang dapat digunakan untuk membantu
+                        membilas dan membersihkan luka.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-card">
+
+                    <h3>🧴 Povidone Iodine</h3>
+
+                    <p>
+                        Antiseptik yang dapat digunakan sesuai petunjuk untuk
+                        membantu mengurangi mikroorganisme pada area tertentu.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REGULASI -->
+    <section id="regulasi" class="regulation">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>🏛️ Wawasan Bahari 🏛️</h2>
+
+                <p>
+                    Internasionalisasi regulasi medis di lingkungan kapal
+                </p>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <h3>🌍 International Medical Guide for Ships</h3>
+
+                <p>
+                    International Medical Guide for Ships menjadi salah satu
+                    referensi penting dalam pelayanan kesehatan di kapal.
+                    Kebutuhan perlengkapan medis dapat berbeda berdasarkan
+                    jenis kapal, jumlah awak, serta jarak kapal dari fasilitas
+                    medis di darat.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">🚢</div>
+
+                    <h3>Kapal Samudera</h3>
+
+                    <p>
+                        Kapal yang melakukan perjalanan jauh membutuhkan
+                        persediaan medis yang lebih lengkap karena akses ke
+                        fasilitas kesehatan darat dapat sangat terbatas.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">📡</div>
+
+                    <h3>TMAS</h3>
+
+                    <p>
+                        Telemedical Maritime Assistance Service memungkinkan
+                        awak kapal mendapatkan dukungan medis dari tenaga
+                        kesehatan di darat melalui komunikasi jarak jauh.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🧑‍⚕️</div>
+
+                    <h3>Pelatihan Awak</h3>
+
+                    <p>
+                        Peralatan P3K akan lebih efektif apabila awak kapal
+                        memahami fungsi dan cara penggunaannya melalui
+                        pelatihan yang sesuai.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="quiz">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>🎮 Quiz P3K Maritim</h2>
+
+                <p>
+                    Uji pengetahuanmu dan lihat seberapa jauh kamu memahami
+                    sejarah serta perlengkapan P3K!
+                </p>
+
+            </div>
+
+
+            <div class="quiz-box">
+
+                <!-- QUIZ CONTENT -->
+
+                <div id="quizContent">
+
+                    <div class="progress">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+
+                    <div class="question-number" id="questionNumber"></div>
+
+                    <div class="question" id="question"></div>
+
+                    <div class="answers" id="answers"></div>
+
+                    <div class="feedback" id="feedback"></div>
+
+                    <div class="quiz-actions">
+
+                        <span id="scoreText">
+                            Skor: 0
+                        </span>
+
+                        <button class="btn" id="nextBtn">
+                            Pertanyaan Berikutnya →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT -->
+
+                <div class="result" id="result">
+
+                    <div style="font-size:60px;">
+                        🏆
+                    </div>
+
+                    <h2>Quiz Selesai!</h2>
+
+                    <div class="result-score" id="finalScore">
+                        0/10
+                    </div>
+
+                    <div class="result-message" id="resultMessage"></div>
+
+                    <button class="btn" onclick="restartQuiz()">
+                        🔄 Main Lagi
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            ⚓ <strong>P3K Maritim Education</strong>
+        </p>
+
+        <p>
+            Website edukatif mengenai sejarah, evolusi, dan perlengkapan
+            pertolongan pertama di lingkungan maritim.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const questions = [
+
+            {
+                question: "Siapa yang mengembangkan sistem ambulances volantes pada awal abad ke-19?",
+                answers: [
+                    "Henry Dunant",
+                    "Dominique Jean Larrey",
+                    "Friedrich von Esmarch",
+                    "Robert Wood Johnson"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Peristiwa apa yang menginspirasi Henry Dunant?",
+                answers: [
+                    "Perang Dunia I",
+                    "Pertempuran Waterloo",
+                    "Pertempuran Solferino",
+                    "Perang Krimea"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Pada tahun berapa Komite Internasional Palang Merah didirikan?",
+                answers: [
+                    "1859",
+                    "1863",
+                    "1870",
+                    "1888"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Siapa yang mengembangkan perban segitiga yang dikenal sebagai Esmarch's bandage?",
+                answers: [
+                    "Henry Dunant",
+                    "Robert Wood Johnson",
+                    "Friedrich von Esmarch",
+                    "Dominique Jean Larrey"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Pada tahun berapa Johnson's Railway First Aid Kit dikembangkan?",
+                answers: [
+                    "1859",
+                    "1863",
+                    "1875",
+                    "1888"
+                ],
+                correct: 3
+            },
+
+            {
+                question: "Apa fungsi utama trauma shears?",
+                answers: [
+                    "Mengukur tekanan darah",
+                    "Memotong pakaian atau material tertentu saat keadaan darurat",
+                    "Memberikan oksigen",
+                    "Membersihkan luka"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Alat apa yang dirancang untuk membantu memberikan bantuan pernapasan dengan penghalang?",
+                answers: [
+                    "Thermal Blanket",
+                    "Trauma Shears",
+                    "CPR Pocket Mask",
+                    "Pinset Anatomis"
+                ],
+                correct: 2
+            },
+
+            {
+                question: "Apa fungsi utama thermal blanket?",
+                answers: [
+                    "Mengukur suhu tubuh",
+                    "Mengurangi kehilangan panas tubuh",
+                    "Membersihkan luka",
+                    "Menghentikan perdarahan"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Cairan NaCl 0,9% dapat digunakan untuk...",
+                answers: [
+                    "Membilas luka",
+                    "Memotong pakaian",
+                    "Mengukur denyut nadi",
+                    "Mengganti oksigen"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "Apa kepanjangan TMAS dalam konteks medis maritim?",
+                answers: [
+                    "Total Maritime Ambulance System",
+                    "Telemedical Maritime Assistance Service",
+                    "Technical Medical Assistance System",
+                    "Transport Maritime Aid Service"
+                ],
+                correct: 1
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+
+        const questionElement =
+            document.getElementById("question");
+
+        const answersElement =
+            document.getElementById("answers");
+
+        const questionNumberElement =
+            document.getElementById("questionNumber");
+
+        const feedbackElement =
+            document.getElementById("feedback");
+
+        const nextButton =
+            document.getElementById("nextBtn");
+
+        const progressBar =
+            document.getElementById("progressBar");
+
+        const scoreText =
+            document.getElementById("scoreText");
+
+        const quizContent =
+            document.getElementById("quizContent");
+
+        const result =
+            document.getElementById("result");
+
+
+        function loadQuestion() {
+
+            answered = false;
+
+            feedbackElement.style.display = "none";
+
+            nextButton.style.display = "none";
+
+            const q = questions[currentQuestion];
+
+            questionNumberElement.textContent =
+                `Pertanyaan ${currentQuestion + 1} dari ${questions.length}`;
+
+            questionElement.textContent =
+                q.question;
+
+            progressBar.style.width =
+                `${((currentQuestion) / questions.length) * 100}%`;
+
+            answersElement.innerHTML = "";
+
+            q.answers.forEach((answer, index) => {
+
+                const button =
+                    document.createElement("div");
+
+                button.classList.add("answer");
+
+                button.textContent = answer;
+
+                button.onclick = () => selectAnswer(index, button);
+
+                answersElement.appendChild(button);
+
+            });
+
+            scoreText.textContent =
+                `Skor: ${score}`;
+
+        }
+
+
+        function selectAnswer(index, selectedButton) {
+
+            if (answered) return;
+
+            answered = true;
+
+            const q = questions[currentQuestion];
+
+            const allAnswers =
+                document.querySelectorAll(".answer");
+
+            allAnswers.forEach((button, i) => {
+
+                button.style.pointerEvents = "none";
+
+                if (i === q.correct) {
+                    button.classList.add("correct");
+                }
+
+            });
+
+
+            if (index === q.correct) {
+
+                score++;
+
+                feedbackElement.textContent =
+                    "✅ Benar! Jawabanmu tepat.";
+
+                feedbackElement.style.background =
+                    "#d9f8e5";
+
+                feedbackElement.style.color =
+                    "#176b3a";
+
+            } else {
+
+                selectedButton.classList.add("wrong");
+
+                feedbackElement.textContent =
+                    `❌ Kurang tepat. Jawaban yang benar adalah: ${q.answers[q.correct]}`;
+
+                feedbackElement.style.background =
+                    "#ffe0e0";
+
+                feedbackElement.style.color =
+                    "#9b2226";
+
+            }
+
+
+            feedbackElement.style.display = "block";
+
+            scoreText.textContent =
+                `Skor: ${score}`;
+
+            nextButton.style.display = "inline-block";
+
+        }
+
+
+        nextButton.onclick = function () {
+
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+
+                loadQuestion();
+
+            } else {
+
+                showResult();
+
+            }
+
+        };
+
+
+        function showResult() {
+
+            quizContent.style.display = "none";
+
+            result.style.display = "block";
+
+            progressBar.style.width = "100%";
+
+            document.getElementById("finalScore").textContent =
+                `${score}/${questions.length}`;
+
+
+            let message = "";
+
+            const percentage =
+                (score / questions.length) * 100;
+
+
+            if (percentage === 100) {
+
+                message =
+                    "🌟 Sempurna! Kamu benar-benar menguasai materi P3K Maritim!";
+
+            } else if (percentage >= 80) {
+
+                message =
+                    "👏 Hebat! Pengetahuanmu tentang P3K Maritim sudah sangat baik.";
+
+            } else if (percentage >= 60) {
+
+                message =
+                    "👍 Bagus! Tinggal sedikit lagi untuk menguasai seluruh materi.";
+
+            } else if (percentage >= 40) {
+
+                message =
+                    "📚 Lumayan! Coba pelajari kembali bagian sejarah dan alat P3K.";
+
+            } else {
+
+                message =
+                    "💪 Jangan menyerah! Baca kembali materinya dan coba lagi.";
+
+            }
+
+
+            document.getElementById("resultMessage").textContent =
+                message;
+
+        }
+
+
+        function restartQuiz() {
+
+            currentQuestion = 0;
+
+            score = 0;
+
+            quizContent.style.display = "block";
+
+            result.style.display = "none";
+
+            loadQuestion();
+
+        }
+
+
+        loadQuestion();
+
+    </script>
+
+</body>
+</html>
+```
